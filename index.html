@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/Logo.png" />
+    <meta name="description" content="Assessment Test Project for ELSA" />
+    <title>ELSA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="./images/logo.svg" alt="elsa-logo" />
+    </header>
+
+    <section class="introduction">
+      <div class="introduction__content">
+        <h1 class="introduction__title">
+          APP LUYỆN NÓI <br />
+          & GIAO TIẾP TIẾNG ANH THỜI 4.0
+        </h1>
+        <h3 class="introduction__sub-title">
+          Với ELSA Speak - Ai Cũng Có Thể Nói Tiếng Anh Hay!
+        </h3>
+        <button
+          id="introduction__btn-register"
+          class="btn introduction__btn-register"
+        >
+          <span>Đăng ký ngay</span>
+        </button>
+      </div>
+      <div class="introduction__illus">
+        <img
+          src="./images/intro-elsaApp.png"
+          height="406"
+          alt="intro-illus elsa app"
+        />
+      </div>
+    </section>
+    <section class="register-form" id="section-register-form">
+      <div class="register-form__form-content">
+        <form action="" method="POST" class="form" id="form-register">
+          <div class="register-form__slogan">
+            CÙNG ỨNG DỤNG ELSA <br />
+            NÓI TIẾNG ANH “THẢ GA”
+          </div>
+          <div class="register-form__form-field">
+            <div class="register-form__form-group form-group">
+              <label for="fullname" class="register-form__form-label form-label"
+                ><i class="fa fa-user icon"></i> Họ tên *</label
+              >
+              <input
+                id="fullname"
+                name="fullname"
+                type="text"
+                class="register-form__form-control form-control"
+              />
+              <span class="register-form__form-message form-message"></span>
+            </div>
+            <div class="register-form__form-group form-group">
+              <label for="phone" class="register-form__form-label form-label"
+                ><i class="fa fa-phone icon"></i> Số điện thoại *</label
+              >
+              <input
+                id="phone"
+                name="phone"
+                type="phone"
+                class="register-form__form-control form-control"
+              />
+              <span class="register-form__form-message form-message"></span>
+            </div>
+            <div class="register-form__form-group form-group">
+              <label for="email" class="register-form__form-label form-label"
+                ><i class="fa fa-envelope icon"></i> Email *</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="register-form__form-control form-control"
+              />
+              <span class="register-form__form-message form-message"></span>
+            </div>
+            <div class="register-form__form-group form-group">
+              <div class="check-price">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="course"
+                      value="1-year course"
+                      onclick="handleCheck(this,'course')"
+                    />
+                    <span>Gói học 1 năm</span>
+                  </label>
+                  <p class="price">Giá: 989.000 VND</p>
+                </div>
+                <div class="form-check right">
+                  <label class="form-check-label right">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="course"
+                      value="lifetime course"
+                      onclick="handleCheck(this,'course')"
+                    />
+                    <span>Gói trọn đời</span>
+                  </label>
+                  <p class="price">Giá: 1.995.000 VND</p>
+                </div>
+              </div>
+              <span class="register-form__form-message form-message"></span>
+            </div>
+            <span class="register-form__form-message form-message-success"
+              ><strong>Đăng ký thành công!</strong> Dữ liệu được hiển thị ở
+              console...</span
+            >
+
+            <button class="w-100 btn register-form__form-submit form-submit">
+              <span>Gửi đăng ký</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="register-form__phone-image">
+        <img src="./images/Phone.png" alt="Elsa features on the phone" />
+      </div>
+    </section>
+    <section class="elsa-features">
+      <h1 class="elsa-features__title">CÁ NHÂN HOÁ LỘ TRÌNH HỌC</h1>
+      <p class="elsa-features__sub-title">
+        Làm bài kiểm tra đầu vào với ELSA trong 5 phút và bạn sẽ có:
+      </p>
+      <div class="row elsa-features__list-features">
+        <div class="col-12 col-sm-6 col-md-3 feature">
+          <img
+            src="./images/features_pic1.png"
+            alt="an illustration of the feature"
+            class="img-illus"
+          />
+          <p>
+            Trí tuệ nhân tạo trả về bạn số điểm
+            <span class="highlight">"chuẩn bản xứ"</span>
+          </p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3 feature">
+          <img
+            src="./images/features_pic1.png"
+            alt="an illustration of the feature"
+            class="img-illus"
+          />
+          <p>
+            <span class="highlight">ngay lập tức</span>, bạn biết mình phát âm
+            sai ở đâu qua những gam màu trực quan sinh động.
+          </p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 feature">
+          <img
+            src="./images/features_pic1.png"
+            alt="an illustration of the feature"
+            class="img-illus"
+          />
+          <p>
+            <span class="highlight">công nghệ nhận diện</span>, giọng nói chuẩn
+            đến từng âm tiết.
+          </p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3 feature">
+          <img
+            src="./images/features_pic1.png"
+            alt="an illustration of the feature"
+            class="img-illus"
+          />
+          <p>
+            ELSA sẽ
+            <span class="highlight">lập lộ trình học cá nhân hoá</span> dựa trên
+            các chỉ số bài kiểm tra đầu vào của bạn.
+          </p>
+        </div>
+      </div>
+
+      <button
+        class="btn elsa-features__btn-register"
+        id="elsa-features__btn-register"
+      >
+        <span>đăng ký ngay</span>
+      </button>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/validator.js"></script>
+    <script>
+      Validator({
+        // truyền selector để query
+        form: "#form-register",
+        errorSelector: ".form-message",
+        formGroupSelector: ".form-group",
+        // Các rule để validate
+        rules: [
+          Validator.isRequired("#fullname"),
+          Validator.isRequired("#email"),
+          Validator.isEmail("#email"),
+          Validator.isRequired("#phone"),
+          Validator.isPhone("#phone"),
+          Validator.isRequired(
+            'input[name="course"]',
+            "Vui lòng chọn gói khoá học"
+          ),
+        ],
+        // Handle submit form
+        onSubmit: function (data) {
+          console.log(data);
+          // Call API and alert
+          var sucMess = document.querySelector(".form-message-success");
+          sucMess.style.display = "block";
+          setTimeout(function () {
+            sucMess.style.display = "none";
+          }, 5000);
+        },
+      });
+    </script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

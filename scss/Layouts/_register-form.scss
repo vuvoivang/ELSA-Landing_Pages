@@ -1,0 +1,302 @@
+.register-form {
+  background: url("../images/register-background.png") center center repeat;
+  background-size: contain;
+  height: 880px;
+  display: flex;
+  padding: 64px 0px;
+
+  &__form-content {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    #form-register {
+      width: 86%;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      @include flex(column, center, flex-end, nowrap);
+    }
+  }
+  &__phone-image {
+    width: 50%;
+    height: 100%;
+    @include flex(column, center, center, wrap);
+  }
+  &__slogan {
+    @include text(#ffffff, 35px, $fw-bold-2);
+    background-image: linear-gradient(
+      to right,
+      rgba(73, 220, 225, 1),
+      rgba(57, 163, 251, 1)
+    );
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    text-align: center;
+    width: 100%;
+    padding: 16px 75px;
+    box-shadow: 0px 4px 8px rgba(46, 153, 241, 0.5);
+  }
+  &__form-field {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 32px;
+  }
+  &__form-submit {
+    @include button(
+      #ffffff,
+      linear-gradient(
+        to right,
+        rgba(61, 255, 200, 1),
+        rgba(64, 246, 207, 1),
+        rgba(73, 220, 225, 1),
+        rgba(87, 179, 255, 1)
+      ),
+      #ffffff,
+      linear-gradient(to right, rgb(5, 126, 91), rgba(87, 179, 255, 1))
+    );
+    box-shadow: 0px 4px 8px rgba(46, 153, 241, 0.5);
+    padding: 9px 36px 16px;
+    span {
+      @include text(#ffffff, 30px, $fw-bold-2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    margin-top: 32px;
+  }
+  &__form-group.invalid {
+    .form-control {
+      border-color: #f33a58;
+    }
+    .form-message {
+      color: #f33a58;
+    }
+  }
+  &__form-group {
+    .check-price {
+      @include flex(row, space-between, flex-start, nowrap);
+      position: relative;
+      margin-bottom: 10px;
+      .form-check {
+        padding-left: 0;
+        label {
+          font-size: 25px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          span {
+            margin-left: 45px;
+          }
+        }
+        label.right {
+          // justify-content: flex-end;
+        }
+
+        .price {
+          margin: 10px 0;
+          @include text($color-hv-1, 20px, $fw-bold-1);
+        }
+        input[type="checkbox"] {
+          // style for the checkbox input
+          appearance: none;
+          background-color: transparent;
+          margin: 0;
+          font: inherit;
+          color: currentColor;
+          width: 1.15em;
+          height: 1.15em;
+          border-radius: 0.15em;
+          border: solid 2px #57b3ff;
+          display: grid;
+          place-content: center;
+          &::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em $color-pr-2;
+            transform-origin: bottom left;
+            clip-path: polygon(
+              14% 44%,
+              0 65%,
+              50% 100%,
+              100% 16%,
+              80% 0%,
+              43% 62%
+            );
+          }
+          &:checked::before {
+            transform: scale(1);
+          }
+        }
+        .price {
+          display: none;
+        }
+      }
+      .form-check.right {
+        @include flex(column, center, flex-end, nowrap);
+      }
+    }
+  }
+  &__form-label {
+    font-size: $fs-lg;
+    color: rgba(6, 186, 232, 1);
+    font-weight: 300;
+    .icon {
+      margin-right: 23px;
+    }
+  }
+  &__form-control {
+    border: solid 2px #57b3ff;
+    height: 60px;
+  }
+  &__form-message.form-message-success {
+    display: none;
+    color: #1ea304;
+    font-size: $fs-md;
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .register-form {
+    &__slogan {
+      padding: 16px 40px;
+    }
+  }
+}
+@media only screen and (max-width: 1240px) {
+  .register-form {
+    &__form-content {
+      width: 60%;
+    }
+    &__slogan {
+      font-size: 25px;
+      padding: 16px 40px;
+    }
+    &__phone-image {
+      img {
+        width: 90%;
+        height: auto;
+      }
+    }
+    &__form-label {
+      font-size: 20px;
+    }
+    &__form-group {
+      .check-price {
+        .form-check {
+          label {
+            font-size: 20px;
+            span {
+              margin-left: 34px;
+            }
+          }
+        }
+      }
+    }
+    &__form-submit {
+      span {
+        font-size: $fs-lg;
+      }
+    }
+  }
+}
+
+@include responsive("large") {
+  .register-form {
+    &__form-content {
+      width: 70%;
+    }
+    &__slogan {
+      font-size: $fs-md;
+      padding: 16px 20px;
+    }
+    &__phone-image {
+      img {
+        width: 85%;
+        height: auto;
+      }
+    }
+    &__form-label {
+      font-size: $fs-md;
+    }
+    &__form-group {
+      .check-price {
+        .form-check {
+          label {
+            font-size: $fs-md;
+          }
+          .price {
+            font-size: $fs-md;
+          }
+        }
+      }
+    }
+    &__form-submit {
+      span {
+        font-size: $fs-lg;
+      }
+    }
+  }
+}
+@include responsive("medium") {
+  .register-form {
+    &__form-content {
+      width: 75%;
+      #form-register {
+        width: 92%;
+      }
+    }
+    &__slogan {
+      font-size: $fs-md;
+      padding: 16px 20px;
+    }
+    &__phone-image {
+      img {
+        width: 85%;
+        height: auto;
+      }
+    }
+    &__form-label {
+      font-size: $fs-md;
+    }
+    &__form-group {
+      .check-price {
+        display: block;
+        .form-check {
+          label {
+            font-size: $fs-md;
+            span {
+            }
+          }
+          .price {
+            font-size: $fs-md;
+          }
+        }
+        .form-check.right {
+          display: block;
+        }
+      }
+    }
+    &__form-submit {
+      span {
+        font-size: $fs-md;
+      }
+    }
+    &__form-control {
+      height: 40px;
+    }
+  }
+}
+@media only screen and (max-width: 650px) {
+  .register-form {
+    display: block;
+    position: relative;
+    &__form-content {
+      width: 95%;
+    }
+    &__phone-image {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.introduction {
+  background: url("../images/intro-background.png") center center repeat;
+  background-size: cover;
+  height: 406px;
+  display: flex;
+  &__content {
+    width: 60%;
+
+    @include flex(column, center, center, wrap);
+  }
+  &__illus {
+    width: 40%;
+    position: relative;
+    img {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  &__title {
+    @include text(rgba(12, 36, 64, 1), 40px, $fw-bold-2);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  &__sub-title {
+    @include text($color-pr-3, $fs-lg, 400);
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  &__btn-register {
+    @include button(
+      #ffffff,
+      linear-gradient(
+        to right,
+        rgba(61, 255, 200, 1),
+        rgba(64, 246, 207, 1),
+        rgba(73, 220, 225, 1),
+        rgba(87, 179, 255, 1)
+      ),
+      #ffffff,
+      linear-gradient(to right, rgb(5, 126, 91), rgba(87, 179, 255, 1))
+    );
+    box-shadow: 0px 4px 8px rgba(46, 153, 241, 0.5);
+    padding: 9px 36px 16px;
+
+    span {
+      @include text(#ffffff, 32px, $fw-bold-2);
+    }
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .introduction {
+    background-size: contain;
+  }
+}
+@include responsive("extra-large") {
+  .introduction {
+    &__title {
+      font-size: $fs-xl;
+    }
+    &__sub-title {
+      font-size: 22px;
+    }
+  }
+}
+@include responsive("large") {
+  .introduction {
+    height: fit-content;
+    &__content {
+      padding: 15px;
+    }
+    &__title {
+      font-size: $fs-lg;
+    }
+    &__sub-title {
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+    &__illus {
+      img {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+    }
+    &__btn-register {
+      padding: 9px 20px;
+      span {
+        font-size: $fs-md;
+      }
+    }
+  }
+}
+
+@include responsive("medium") {
+  .introduction {
+    align-items: center;
+    &__content {
+      padding-right: 5px;
+    }
+    &__title {
+      font-size: $fs-md;
+      margin-bottom: 10px;
+    }
+    &__sub-title {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    &__btn-register {
+      padding: 9px 20px;
+      span {
+        font-size: $fs-sm;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .introduction {
+    &__title {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    &__sub-title {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    &__btn-register {
+      padding: 5px 10px;
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
